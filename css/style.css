@@ -14,8 +14,6 @@ body {
 }
 
 
-/* Navbar Block */
-
 .navbar {
     width: 100%;
     height: 70px;
@@ -238,3 +236,118 @@ body {
 
 
 /* Home Page Book Block End */
+
+/* Sign In Block Start */
+ .sign-in-container{
+    width: 100%;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+ }
+ .sign-in-block{
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+ }
+ .form-control{
+    display: flex;
+    flex-direction: column;
+ }
+ .btn-control{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+ }
+ .link-control{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+ }
+ .link-control a{
+    font-size: 10px;
+ }
+ .btn-login{
+    width: 100%;
+ }
+ 
+/* Sign In Block End */
+
+
+
+/* Sign Up Block Start */
+
+
+/* Sign Up Block End */
+
+
+
+
+/* Cart Block Start */
+.cart-container{
+    padding-top: 100px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+   align-items: center;
+   gap: 100px;
+}
+.cart-order-block{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cart-order{
+    width: 400px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    max-height: 500px;
+    overflow-y: auto;
+}
+.table-title{
+    color: gray;
+}
+.qty-value,.price-value{
+    color: #ed5724;
+}
+.cart-table-header,.cart-table-body{
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.cart-table-header{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #f4f3f3;
+}
+.cart-table-body{
+    background-color: white;
+    position: relative;
+    display: flex;
+
+}
+.cart-table-body::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #ed5724;
+}
+.total-order{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+/* Cart Block End */
