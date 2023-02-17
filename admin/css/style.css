@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Kantumruy:wght@300;400;700&family=Kdam+Thmor+Pro&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Preahvihear&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: #f4f3f3;
+    padding: 100px;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.151);
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form-control{
+    display: flex;
+    flex-direction: column;
+
+}
+.btn-block{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.sidebar{
+    width: 50px;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: white;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.116);
+    gap: 30px;
+
+}
+
+.admin-navbar{
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Display Page Start */
+.table-container{
+  width: 100%;
+  padding: 30px;
+  min-width: 500px;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+}
+.table{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.table-header{
+    color: gray;
+}
+.table-header,.table-body{
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px 100px;
+    padding: 10px;
+    gap: 20px;
+    place-items: center;
+  
+}
+.table-body{
+   
+    background-color: white;
+
+
+}
+.action{
+    display: flex;
+    gap: 30px;
+}
+/* Display Page End */

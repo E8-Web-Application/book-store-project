@@ -36,7 +36,7 @@
       ?>
       <div class="book-card">
         <div class="book-cover">
-          <img src="<?php echo $row['image'] ?>" alt="<?php echo $row['image'] ?>">
+          <img src="http://localhost/book-store-project/images/<?php echo $row['image'] ?>" alt="<?php echo $row['image'] ?>">
         </div>
         <div class="book-name">
           <h4><?php echo $row['name'] ?></h4>
@@ -76,7 +76,7 @@
       ?>
       <div class="book-card">
         <div class="book-cover">
-          <img src="<?php echo $row['image'] ?>" alt="<?php echo $row['image'] ?>">
+        <img src="http://localhost/book-store-project/images/<?php echo $row['image'] ?>" alt="<?php echo $row['image'] ?>">
         </div>
         <div class="book-name">
           <h4><?php echo $row['name'] ?></h4>
@@ -85,7 +85,7 @@
           <p>$10.99</p>
         </div>
         <div class="book-add-cart">
-          <a href="../../book-store-project/pages/insert.php?value=1&&test=<?php echo $row['category_id'] ?>">Add To Cart</a>
+        <a href="../../book-store-project/pages/insert.php?value=1&&name=<?php echo $row['name'] ?>&&price=<?php echo $row['price'] ?>&&qty=1">Add To Cart</a>
         </div>
       </div>
 
