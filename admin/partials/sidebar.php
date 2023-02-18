@@ -10,11 +10,6 @@
       </a>
       </div>
       <div class="icon-container">
-      <a href="">
-      <i class="fa-solid fa-pen-to-square"></i>
-      </a>
-      </div>
-      <div class="icon-container">
       <a href="../pages/display.php">
       <i class="fa-solid fa-list"></i>
       </a>

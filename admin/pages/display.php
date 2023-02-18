@@ -12,10 +12,12 @@
             <span>Action</span>
          </div>
     <?php include("../../../book-store-project/partials/connect.php");
-     $sql = "SELECT * FROM `product` INNER JOIN `category` ON product.category_id=category.id;";
+     $sql = "SELECT product.id as id,product.name as name,product.image as image,category.category_name as category_name,product.price as price FROM `product` INNER JOIN `category` ON product.category_id=category.id";
      $result = mysqli_query($conn, $sql); 
+     
     ?>
   <?php if(mysqli_num_rows($result) > 0)  {
+
         while($row = mysqli_fetch_assoc($result)) {
       ?>
          <div class="table-body">
@@ -29,7 +31,7 @@
                 <a href="./delete.php?id=<?php echo $row['id'];?>">
                 <i class="fa-solid fa-trash"></i>
                 </a>
-                <a href="">
+                <a href="./update.php?id=<?php echo $row['id']; ?>">
                 <i class="fa-solid fa-pen-to-square"></i>
                 </a>
             </div>
