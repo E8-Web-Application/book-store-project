@@ -1,16 +1,16 @@
 <?php include("../partials/header.php"); ?>
 <?php include("../partials/navbar.php"); ?>
   <div class="sign-in-container">
-      <form class="sign-in-block">
+      <form class="sign-in-block" method="post" action="./check_sign_in.php">
           <h1>Login Account</h1>
         <div class="username-block form-control">
-            <label for="">Email</label>
-            <input type="text" class="email-field" placeholder="email">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" class="email-field" placeholder="email">
         </div>
         
         <div class="username-block form-control">
-            <label for="">Password</label>
-            <input type="password" class="password-field" placeholder="password">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="password-field" placeholder="password">
         </div>
         <div class="link-control">
             <a href="../../book-store-project/pages/sign-up.php">Register Account?</a>

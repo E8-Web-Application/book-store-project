@@ -305,7 +305,7 @@ body {
 }
 
 .cart-order{
-    width: 400px;
+    width: 450px;
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -321,8 +321,9 @@ body {
 .cart-table-header,.cart-table-body{
     padding: 10px;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 50px 200px 100px 50px;
+
 }
 .cart-table-header{
     position: sticky;
@@ -333,7 +334,6 @@ body {
 .cart-table-body{
     background-color: white;
     position: relative;
-    display: flex;
 
 }
 .cart-table-body::after{
@@ -351,3 +351,30 @@ body {
     justify-content: space-between;
 }
 /* Cart Block End */
+
+
+/* Checkout Block Start */
+.checkout-container{
+    width: 100%;
+    height: 80vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.checkout-form{
+    width: 400px;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.expire-security{
+    display: flex;
+    justify-content: space-between;
+}
+.checkout-form-button{
+    margin-top: 10px;
+}
+/* Checkout Block End */

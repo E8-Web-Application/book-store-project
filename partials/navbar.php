@@ -1,17 +1,15 @@
  <!-- navbar start -->
  <?php
-   include("../partials/connect.php");
-// Execute the query to get the total number of rows in the table
-$sql= "SELECT COUNT(*) as total_rows FROM cart";
-$result = mysqli_query($conn,$sql);
-
-// Fetch the result and get the total number of rows
-$row = mysqli_fetch_assoc($result);
-$total_rows = $row['total_rows'];
-
- 
-
- 
+ session_start();
+ $count=0;
+ if(isset($_SESSION['cart'])) {
+  global $count;
+     $count = count($_SESSION['cart']);
+ }
+else{
+ global $count;
+ $count=0;
+}
  ?>
  <nav class="navbar">
    <a href="../../book-store-project/pages/index.php" class="nisset-logo">
@@ -25,13 +23,13 @@ $total_rows = $row['total_rows'];
        <a href="../../book-store-project/pages/category.php">Category</a>
      </li>
      <li>
-       <a href="../../book-store-project/pages/sign-in.php">Account <i class="fa-solid fa-user"></i></a>
+       <a href="../../book-store-project/pages/<?php if(isset($_SESSION['user_id'])){echo 'account.php';} else{echo 'sign-in.php';}  ?>">Account <i class="fa-solid fa-user"></i></a>
      </li>
      <li>
        <a href="../../book-store-project/pages/cart.php">
          <i class="fa-solid fa-cart-shopping"></i>
          <span class="cart">
-    <?php echo $total_rows ?>
+    <?php echo $count;?>
 
          </span>
        </a>
@@ -61,7 +59,7 @@ $total_rows = $row['total_rows'];
          <i class="fa-solid fa-cart-shopping"></i>
          <span class="cart"> 
 
-    <?php echo $total_rows ?>
+    <?php echo $count; ?>
          </span>
        </a>
 

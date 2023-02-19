@@ -26,7 +26,7 @@
                 <input type="file" name="image" id="image">
               </div>
               <div class="btn-block">
-                <a class="btn btn-back" href="#">Back Home</a>
+                <a class="btn btn-back" href="../../../book-store-project/pages/index.php">Back Home</a>
                 <button type="submit" class="btn btn-back">Save</button>
               </div>
         </form>
