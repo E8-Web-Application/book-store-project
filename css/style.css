@@ -312,6 +312,10 @@ body {
     max-height: 500px;
     overflow-y: auto;
 }
+.cart-message p{
+ margin: 10px 0;
+ color: #ed5624b2;
+}
 .table-title{
     color: gray;
 }
@@ -378,3 +382,52 @@ body {
     margin-top: 10px;
 }
 /* Checkout Block End */
+
+/* Order Page Start */
+.order-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    gap: 20px;
+}
+.order-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.order-header,.order-item{
+    display: flex;
+    gap: 50px;
+}
+.order-header{
+    color: gray;
+}
+.order-body{
+    background-color: white;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 100px 100px 50px 80px 100px;
+    place-items: center;
+    border-radius: 10px;
+}
+.order-form-header{
+    display: grid;
+    grid-template-columns: 160px 80px 50px 80px 100px;
+    background-color: rgb(255, 255, 255);
+    color: gray;
+    padding: 20px;
+    border-radius: 10px;
+}
+.order-message{
+    color: #ed562457;
+}
+.order-product{
+    color: #ed562457;
+}
+.order-total{
+    display: flex;
+   gap: 250px;
+}
+/* Order Page End */

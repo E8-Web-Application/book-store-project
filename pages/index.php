@@ -83,11 +83,10 @@
           <h4><?php echo $row['name'] ?></h4>
         </div>
         <div class="book-price">
-          <p>$10.99</p>
+        <p>$<?php echo $row['price'] ?></p>
         </div>
         <div class="book-add-cart">
-        <a href="../../book-store-project/pages/insert.php?value=1&&name=<?php echo $row['name'] ?>&&price=<?php echo $row['price'] ?>&&qty=1">Add To Cart</a>
-        </div>
+        <a href="../../book-store-project/pages/insert.php?value=1&&name=<?php echo $row['name'] ?>&&price=<?php echo $row['price'] ?>&&qty=1&&id=<?php echo $row['id']; ?>">Add To Cart</a>      </div>
       </div>
 
     <?php } }?>

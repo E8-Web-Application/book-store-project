@@ -3,7 +3,7 @@
 
 <div class="checkout-container">
   
-<form action="" class="checkout-form">
+<form action="./order_check.php" class="checkout-form" method="post">
     <div class="checkout-form-image form-control">
         <img src="../images/credit_card.png" alt="">
     </div>

@@ -4,19 +4,27 @@
 <div class="sign-in-container">
       <form class="sign-in-block">
           <h2>Register Account</h1>
-        <div class="username-block form-control">
+        <div class="email-block form-control">
             <label for="">Email</label>
             <input type="text" class="email-field" placeholder="email">
         </div>
-        <div class="username-block form-control">
-            <label for="">Phone</label>
-            <input type="text" class="email-field" placeholder="Phone Number">
+        <div class="firstname-block form-control">
+            <label for="">FirstName</label>
+            <input type="text" class="firstname-field" placeholder="FirstName">
         </div>
-        <div class="username-block form-control">
+        <div class="lastname-block form-control">
+            <label for="">LastName</label>
+            <input type="text" class="lastname-field" placeholder="LastName">
+        </div>
+        <div class="phone-block form-control">
+            <label for="">Phone</label>
+            <input type="text" class="phone-field" placeholder="Phone Number">
+        </div>
+        <div class="password-block form-control">
             <label for="">Password</label>
             <input type="password" class="password-field" placeholder="New Password">
         </div>
-        <div class="username-block form-control">
+        <div class="password-block form-control">
             <label for="">Password</label>
             <input type="password" class="password-field" placeholder="Confirm Password">
         </div>

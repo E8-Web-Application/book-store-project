@@ -33,6 +33,7 @@ if (isset($_GET['name'])) {
   $id = $_GET['id'];
   foreach ($_SESSION['cart'] as $key => $item) {
     if ($item['product_id'] == $id) {
+      echo $key;
       // Increase the quantity of the existing item
       $_SESSION['cart'][$key]['qty'] += $_GET['qty'];
       $_SESSION['cart'][$key]['price'] = $_SESSION['cart'][$key]['qty'] * $_SESSION['cart'][$key]['unit_price'];
