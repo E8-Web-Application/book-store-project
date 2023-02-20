@@ -1,3 +1,3 @@
 <nav class="admin-navbar">
-      <h1>Admin Tool</h1>
+      <h1>Dashboard</h1>
     </nav>
