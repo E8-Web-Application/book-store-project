@@ -26,10 +26,8 @@
   <div class="book-block-card">
     <?php 
     include ("../partials/connect.php");
-    $sql = "SELECT * FROM product WHERE category_id=1 ;";
+    $sql = "SELECT * FROM product WHERE category_id=1 LIMIT 0,8 ;";
     $result = mysqli_query($conn, $sql); 
-  
-  
 ?>
     <!-- card start -->
     <?php if(mysqli_num_rows($result) > 0)  {
@@ -49,9 +47,7 @@
           <a href="../../book-store-project/pages/insert.php?value=1&&name=<?php echo $row['name'] ?>&&price=<?php echo $row['price'] ?>&&qty=1&&id=<?php echo $row['id']; ?>">Add To Cart</a>
         </div>
       </div>
-
     <?php } }?>
-
     <!-- card end -->
   </div>
   <!-- popular book block end -->
@@ -67,7 +63,7 @@
   <div class="book-block-card">
     <?php 
     include ("../partials/connect.php");
-    $sql = "SELECT * FROM product WHERE category_id=2 ;";
+    $sql = "SELECT * FROM product WHERE category_id=2 LIMIT 0,8 ;";
     $result = mysqli_query($conn, $sql); 
   
 ?>

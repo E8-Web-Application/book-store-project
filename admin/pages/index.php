@@ -1,6 +1,7 @@
 <?php include("../../../book-store-project/admin/partials/header.php") ?>
 <?php include("../../../book-store-project/admin/partials/navbar.php") ?>
 <?php include("../../../book-store-project/admin/partials/sidebar.php") ?>
+<?php include("../../../book-store-project/partials/connect.php") ?>
      
     
     <div class="container">
@@ -17,8 +18,17 @@
               <div class="form-control">
                 <label for="category">Category</label>
                  <select name="category" id="category">
-                    <option value="1">Popular</option>
-                    <option value="2">Motivation</option>
+                    <?php
+                    $sql="SELECT * FROM category"; 
+                       $result=mysqli_query($conn,$sql);
+                       if(mysqli_num_rows($result)>0){
+                        while($row=mysqli_fetch_assoc($result)){
+                       
+                      ?>
+                    <option value="<?php echo $row['id'] ?>"><?php echo $row['category_name']; ?></option>
+                    <?php 
+                    }}
+                    ?>
                  </select>
               </div>
               <div class="form-control">

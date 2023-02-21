@@ -20,7 +20,7 @@ else{
      <a href="../../book-store-project/pages/index.php">Home</a>
      </li>
      <li>
-       <a href="../../book-store-project/pages/category.php">Category</a>
+       <a href="../../book-store-project/pages/category.php?search=popular">Category</a>
      </li>
      <li>
        <a href="../../book-store-project/pages/<?php if(isset($_SESSION['user_id'])){echo 'account.php';} else{echo 'sign-in.php';}  ?>">Account <i class="fa-solid fa-user"></i></a>
