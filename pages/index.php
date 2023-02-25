@@ -13,85 +13,76 @@
     </h3>
   </div>
 </div>
-
 <!-- Quote Block End -->
-
-<!-- Book Block Start -->
+<!-- Book Container Blook Start -->
 <div class="book-block">
-  <!-- popular book block start -->
-  <div class="book-block-header">
-    <h3>Popular</h3>
-    <div class="line"></div>
-  </div>
-  <div class="book-block-card">
-    <?php 
-    include ("../partials/connect.php");
-    $sql = "SELECT * FROM product WHERE category_id=1 LIMIT 0,8 ;";
-    $result = mysqli_query($conn, $sql); 
-?>
-    <!-- card start -->
-    <?php if(mysqli_num_rows($result) > 0)  {
-        while($row = mysqli_fetch_assoc($result)) {
-      ?>
-      <div class="book-card">
-        <div class="book-cover">
-          <img src="http://localhost/book-store-project/images/<?php echo $row['image'] ?>" alt="<?php echo $row['image'] ?>">
-        </div>
-        <div class="book-name">
-          <h4><?php echo $row['name'] ?></h4>
-        </div>
-        <div class="book-price">
-          <p>$<?php echo $row['price'] ?></p>
-        </div>
-        <div class="book-add-cart">
-          <a href="../../book-store-project/pages/insert.php?value=1&&name=<?php echo $row['name'] ?>&&price=<?php echo $row['price'] ?>&&qty=1&&id=<?php echo $row['id']; ?>">Add To Cart</a>
-        </div>
-      </div>
-    <?php } }?>
-    <!-- card end -->
-  </div>
-  <!-- popular book block end -->
+  <!-- Query to retrive each category from category table Start Tag-->
+  <?php
+  include("../partials/connect.php");
+  $sql = "SELECT * FROM category";
+  $result = mysqli_query($conn, $sql);
+  if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+      $c_name = $row['category_name'];
+  ?>
+      <!--Query to retrive each category from category table End Tag -->
 
 
 
 
-   <!-- popular book block start -->
-   <div class="book-block-header">
-    <h3>Motivation</h3>
-    <div class="line"></div>
-  </div>
-  <div class="book-block-card">
-    <?php 
-    include ("../partials/connect.php");
-    $sql = "SELECT * FROM product WHERE category_id=2 LIMIT 0,8 ;";
-    $result = mysqli_query($conn, $sql); 
+      <!-- Category Header Start Tag -->
+      <div class="book-block-header">
+         <div class="book-block-header-category-name">
+         <h3><?php echo $row['category_name'] ?></h3>
+         <a href="./category.php?search=<?php echo $c_name ?>">See More</a>
   
-?>
-    <!-- card start -->
-    <?php if(mysqli_num_rows($result) > 0)  {
-        while($row = mysqli_fetch_assoc($result)) {
-      ?>
-      <div class="book-card">
-        <div class="book-cover">
-        <img src="http://localhost/book-store-project/images/<?php echo $row['image'] ?>" alt="<?php echo $row['image'] ?>">
-        </div>
-        <div class="book-name">
-          <h4><?php echo $row['name'] ?></h4>
-        </div>
-        <div class="book-price">
-        <p>$<?php echo $row['price'] ?></p>
-        </div>
-        <div class="book-add-cart">
-        <a href="../../book-store-project/pages/insert.php?value=1&&name=<?php echo $row['name'] ?>&&price=<?php echo $row['price'] ?>&&qty=1&&id=<?php echo $row['id']; ?>">Add To Cart</a>      </div>
+         </div>
+         <div class="line"></div>
+      </div>
+      <!-- Category Header End Tag -->
+
+
+      <!-- Book Cart Start Tag-->
+      <div class="book-block-card">
+
+        <!-- Query To Retrive product (book) from product table start tag -->
+        <?php
+        include("../partials/connect.php");
+        $sql = "SELECT * FROM product WHERE category_id in(SELECT id from category WHERE category_name='$c_name') LIMIT 0,8 ;";
+        $product_result = mysqli_query($conn, $sql);
+        ?>
+        <!-- Query To Retrive product (book) from product table End tag -->
+
+        <?php if (mysqli_num_rows($product_result) > 0) {
+          while ($product_row = mysqli_fetch_assoc($product_result)) {
+        ?>
+
+            <!-- A book Cart Start Tag -->
+            <div class="book-card">
+              <div class="book-cover">
+                <img src="http://localhost/book-store-project/images/<?php echo $product_row['image'] ?>" alt="<?php echo $product_row['image'] ?>">
+              </div>
+              <div class="book-name">
+                <h4><?php echo $product_row['name'] ?></h4>
+              </div>
+              <div class="book-price">
+                <p>$<?php echo $product_row['price'] ?></p>
+              </div>
+              <div class="book-add-cart">
+                <a href="../../book-store-project/pages/insert.php?value=1&&name=<?php echo $product_row['name'] ?>&&price=<?php echo $product_row['price'] ?>&&qty=1&&id=<?php echo $product_row['id']; ?>">Add To Cart</a>
+              </div>
+            </div>
+
+            <!-- A book Cart End Tag -->
+        <?php }
+        } ?>
       </div>
 
-    <?php } }?>
-
-    <!-- card end -->
-  </div>
-  <!-- popular book block end -->
-
-
-  <!-- Book Block End -->
-
-  <?php include("../partials/footer.php"); ?>
+      <!-- Book Cart End Tag-->
+  <?php
+    }
+  }
+  ?>
+</div>
+<!-- Book Container Blook Start -->
+<?php include("../partials/footer.php"); ?>

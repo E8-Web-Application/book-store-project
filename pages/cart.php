@@ -5,7 +5,7 @@
 <h1>Your Shopping Cart</h1>
      <div class="cart-order-block">
         <div class="cart-image">
-        <i class="fa-solid fa-cart-shopping" style="font-size:200px; color:#ed5724;"></i>
+         <img src="../images/shopping_cart.png" width="300" alt="">
         </div>
         <div class="cart-order">
             <div class="cart-table-header">
