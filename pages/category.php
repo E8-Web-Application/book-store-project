@@ -7,12 +7,23 @@
   <div class="category-navigation">
     <?php
     $c_name = $_GET['search'];
+    $color='gray';
+    
     $sql = "SELECT * FROM category";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0) {
       while ($row = mysqli_fetch_assoc($result)) {
+        if($c_name==$row['category_name']){
+          global $color;
+          $color="#ed5724";
+        }
+        else{
+          global $color;
+          $color="gray";
+        }
+        
     ?>
-        <a href="./category.php?search=<?php echo $row['category_name']; ?>"><?php echo $row['category_name']; ?></a>
+        <a style="color: <?php echo $color;  ?>" href="./category.php?search=<?php echo $row['category_name']; ?>"><?php echo $row['category_name']; ?></a>
     <?php
       }
     }
