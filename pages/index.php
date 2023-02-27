@@ -1,5 +1,14 @@
 <?php include("../partials/header.php"); ?>
 <?php include("../partials/navbar.php") ?>
+<div class="dark-mode-container">
+  <div id="dark-mode">
+  <p>Dark Mode</p>
+  <button class="dark-mode-btn">
+  <i class="fas fa-toggle-off"></i>
+  <!-- <i class="fas fa-toggle-on"></i> -->
+</button>
+  </div>
+</div>
 <?php include("../partials/banner.php") ?>
 <!-- Quote Block Start -->
 
@@ -60,7 +69,9 @@
             <!-- A book Cart Start Tag -->
             <div class="book-card">
               <div class="book-cover">
-                <img src="http://localhost/book-store-project/images/<?php echo $product_row['image'] ?>" alt="<?php echo $product_row['image'] ?>">
+              <a href="./book-detail.php">
+              <img src="http://localhost/book-store-project/images/<?php echo $product_row['image'] ?>" alt="<?php echo $product_row['image'] ?>">
+              </a>
               </div>
               <div class="book-name">
                 <h4><?php echo $product_row['name'] ?></h4>

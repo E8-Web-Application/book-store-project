@@ -23,7 +23,7 @@
         }
         
     ?>
-        <a style="color: <?php echo $color;  ?>" href="./category.php?search=<?php echo $row['category_name']; ?>"><?php echo $row['category_name']; ?></a>
+        <a class="category-nav-name" style="color: <?php echo $color;  ?>" href="./category.php?search=<?php echo $row['category_name']; ?>"><?php echo $row['category_name']; ?></a>
     <?php
       }
     }
@@ -68,7 +68,9 @@
     ?>
         <div class="book-card">
           <div class="book-cover">
-            <img src="http://localhost/book-store-project/images/<?php echo $row['image'] ?>" alt="<?php echo $row['image'] ?>">
+           <a href="./book-detail.php">
+           <img src="http://localhost/book-store-project/images/<?php echo $row['image'] ?>" alt="<?php echo $row['image'] ?>">
+           </a>
           </div>
           <div class="book-name">
             <h4><?php echo $row['name'] ?></h4>
