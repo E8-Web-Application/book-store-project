@@ -4,36 +4,70 @@
  <?php 
  include("../../../book-store-project/partials/connect.php");
  $id=$_GET['id'];
- $sql = "SELECT product.id as id,product.name as name,product.image as image,category.category_name as category_name,product.price as price FROM `product` INNER JOIN `category` ON product.category_id=category.id where product.id=$id";
+ $sql = "SELECT product.id as id,product.name as name,description,publisher,author,first_publish,language,product.image as image,category.category_name as category_name,product.price as price,page FROM `product` INNER JOIN `category` ON product.category_id=category.id where product.id=$id";
  $result = mysqli_query($conn, $sql); 
  $row=mysqli_fetch_assoc($result);
  $category_id=$row['id'];
- 
+ $description=$row['description'];
  ?>    
     
     <div class="container">
         <form action="" class="form-container" method="post" enctype="multipart/form-data">
-              <div class="form-control">
+        <div class="form-control">
                 <label for="name">Book Name</label>
-                <input type="text" name="name" id="name" value="<?php echo $row['name']?>">
+                <input type="text" name="name" id="name" value="<?php echo $row['name'] ?>">
               </div>
               <div class="form-control">
-                <label for="price">Book Price</label>
-                <input type="text" name="price" id="price" value="<?php echo $row['price']?>">
+                <label for="publisher">Publisher</label>
+                <input type="text" name="publisher" id="publisher" value="<?php echo $row['publisher'] ?>">
+              </div>
+              <div class="form-control">
+                <label for="author">Author</label>
+                <input type="text" name="author" id="author" value="<?php echo $row['author'] ?>">
+              </div>
+              <div class="form-control">
+                <label for="first_publish">First Publish</label>
+                <input type="date" name="first_publish" id="first_publish" value="<?php echo $row['first_publish'] ?>">
+              </div>
+              <div class="form-control">
+                <label for="language">Language</label>
+                <input type="text" name="language" id="language" value="<?php echo $row['language'] ?>">
+              </div>
+              <div class="form-control">
+                <label for="page">Page</label>
+                <input type="number" name="page" id="page" value="<?php echo $row['page'] ?>">
+              </div>
+              <div class="form-control">
+                <label for="price">Price</label>
+                <input type="text" name="price" id="price" value="<?php echo $row['price'] ?>">
               </div>
               <div class="form-control">
                 <label for="category">Category</label>
                  <select name="category" id="category">
-                    <option  value="1" <?php if ($row['category_name'] == 'popular'){ ?> selected <?php }?>>Popular</option>
-                    <option  value="2"  <?php if ($row['category_name'] == 'motivation'){ ?> selected <?php }?>>Motivation</option>
+                    <?php
+                    $sql="SELECT * FROM category"; 
+                       $result=mysqli_query($conn,$sql);
+                       if(mysqli_num_rows($result)>0){
+                        while($row=mysqli_fetch_assoc($result)){
+                       
+                      ?>
+                    <option value="<?php echo $row['id'] ?>"><?php echo $row['category_name']; ?></option>
+                    <?php 
+                    }}
+                    ?>
                  </select>
               </div>
+              <div class="form-control">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" cols="30" rows="10" ><?php echo $description;?></textarea>
+              </div>
+             
               <div class="form-control">
                 <label for="name">Image</label>
                 <input type="file" name="image" id="image">
               </div>
               <div class="btn-block">
-                <a class="btn btn-back" href="#">Back Home</a>
+                <a class="btn btn-back" href="../../../book-store-project/pages/index.php">Back Home</a>
                 <button type="submit" class="btn btn-back">Save</button>
               </div>
         </form>
@@ -48,8 +82,16 @@
 include("../../../book-store-project/partials/connect.php");
    if(isset($_POST['name'])){
     $id=$_GET['id'];
-  $book_name=$_POST['name'];
-  $book_price=$_POST['price'];
+    $book_name=$_POST['name'];
+    $book_description=$_POST['description'];
+    $book_publisher=$_POST['publisher'];
+    $book_author=$_POST['author'];
+    $book_first_publish=$_POST['first_publish'];
+    $book_language=$_POST['language'];
+    $book_page=$_POST['page'];
+    $book_price=$_POST['price'];
+    $book_category=$_POST['category'];
+    $book_cover=$file['name'];
   $book_category=$_POST['category'];
   $sql="";
   if (isset($_FILES['image'])&&$_FILES['image']['name']!="") {
@@ -58,11 +100,11 @@ include("../../../book-store-project/partials/connect.php");
     $book_cover=$file['name'];
     move_uploaded_file($file['tmp_name'], $destination);
     global $sql;
-    $sql="UPDATE product SET name='$book_name',image='$book_cover',price='$book_price',category_id='$book_category' WHERE id=$id;";
+    $sql="UPDATE product SET name='$book_name',description='$book_description',publisher='$book_publisher',author='$book_author',first_publish='$book_first_publish',language='$book_language',page='$book_page',image='$book_cover',price='$book_price',category_id='$book_category' WHERE id=$id;";
   }
   else{
     global $sql;
-    $sql="UPDATE product SET name='$book_name',price='$book_price',category_id='$book_category' WHERE id=$id;";
+    $sql="UPDATE product SET name='$book_name',description='$book_description',publisher='$book_publisher',author='$book_author',first_publish='$book_first_publish',language='$book_language',page='$book_page',price='$book_price',category_id='$book_category' WHERE id=$id;";
   }
  
   // execute the insert statement

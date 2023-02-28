@@ -10,9 +10,28 @@
                 <label for="name">Book Name</label>
                 <input type="text" name="name" id="name">
               </div>
-              
               <div class="form-control">
-                <label for="price">Book Price</label>
+                <label for="publisher">Publisher</label>
+                <input type="text" name="publisher" id="publisher">
+              </div>
+              <div class="form-control">
+                <label for="author">Author</label>
+                <input type="text" name="author" id="author">
+              </div>
+              <div class="form-control">
+                <label for="first_publish">First Publish</label>
+                <input type="date" name="first_publish" id="first_publish">
+              </div>
+              <div class="form-control">
+                <label for="language">Language</label>
+                <input type="text" name="language" id="language">
+              </div>
+              <div class="form-control">
+                <label for="page">Page</label>
+                <input type="number" name="page" id="page">
+              </div>
+              <div class="form-control">
+                <label for="price">Price</label>
                 <input type="text" name="price" id="price">
               </div>
               <div class="form-control">
@@ -31,6 +50,11 @@
                     ?>
                  </select>
               </div>
+              <div class="form-control">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" cols="30" rows="10"></textarea>
+              </div>
+             
               <div class="form-control">
                 <label for="name">Image</label>
                 <input type="file" name="image" id="image">

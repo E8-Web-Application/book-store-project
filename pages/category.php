@@ -68,7 +68,7 @@
     ?>
         <div class="book-card">
           <div class="book-cover">
-           <a href="./book-detail.php">
+           <a href="./book-detail.php?id=<?php echo $row['id']; ?>">
            <img src="http://localhost/book-store-project/images/<?php echo $row['image'] ?>" alt="<?php echo $row['image'] ?>">
            </a>
           </div>
