@@ -1,6 +1,6 @@
-CREATE DATABASE testdb;
+CREATE DATABASE book_store_db;
 
-USE testdb;
+USE book_store_db;
 CREATE TABLE `user` (
   id INT NOT NULL AUTO_INCREMENT,
   first_name VARCHAR(50),
@@ -19,6 +19,12 @@ CREATE TABLE category (
 CREATE TABLE product (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(50),
+  description	TEXT,
+  publisher varchar(50),
+  author varchar(50),
+  first_publish varchar(50),
+  language varchar(50),
+  page INT,
   image VARCHAR(100),
   price DECIMAL(10, 2),
   category_id INT,

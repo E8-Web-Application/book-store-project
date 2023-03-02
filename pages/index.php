@@ -70,7 +70,7 @@
             <div class="book-card">
               <div class="book-cover">
               <a href="./book-detail.php?id=<?php echo $product_row['id']; ?>">
-              <img src="http://localhost/book-store-project/images/<?php echo $product_row['image'] ?>" alt="<?php echo $product_row['image'] ?>">
+              <img src="../..//book-store-project/images/<?php echo $product_row['image'] ?>" alt="<?php echo $product_row['image'] ?>">
               </a>
               </div>
               <div class="book-name">
