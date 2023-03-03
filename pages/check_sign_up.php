@@ -6,6 +6,7 @@ if(isset($_POST['email'])&&$_POST['password']){
    $last_name=$_POST['last_name'];
    $email=$_POST['email'];
    $password=$_POST['password'];
+   $hash=password_hash($password,PASSWORD_DEFAULT);
    $confirm_password=$_POST['confirm_password'];
    $phone=$_POST['phone'];
    $sql="SELECT * FROM user where email='$email'";
@@ -24,7 +25,7 @@ if(isset($_POST['email'])&&$_POST['password']){
     header('Location: ./sign-up.php');
    }
    else{
-    $sql="INSERT INTO user(first_name, last_name, email,password, phone) VALUES ('$first_name','$last_name','$email','$password','$phone')";
+    $sql="INSERT INTO user(first_name, last_name, email,password, phone) VALUES ('$first_name','$last_name','$email','$hash','$phone')";
     if(mysqli_query($conn,$sql)){
     $_SESSION['register_check']="";
     $_SESSION['account_check']=true;
@@ -33,7 +34,7 @@ if(isset($_POST['email'])&&$_POST['password']){
    }
 }
 else{
-    
+    echo "Nnice";
 }
 
 
