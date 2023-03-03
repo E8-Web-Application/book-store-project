@@ -3,7 +3,7 @@ session_start();
 include("../partials/connect.php");
 // Check if the user has submitted the login form
 if (isset($_POST['email']) && isset($_POST['password'])) {
-  echo "Hello WOrld";
+
     // Get the user's email and password
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -23,8 +23,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     } else {
       // The user's credentials are invalid, show an error message
       $_SESSION['account_check']=false;
-      // header('Location: ./sign-in.php');
-      echo "Failed";
+         header('Location: ./sign-in.php');
+
     }
   }
 else{
