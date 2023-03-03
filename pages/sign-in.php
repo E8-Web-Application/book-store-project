@@ -1,5 +1,6 @@
 <?php include("../partials/header.php"); ?>
 <?php include("../partials/navbar.php"); ?>
+<?php session_start(); ?>
   <div class="sign-in-container">
       <form class="sign-in-block" method="post" action="./check_sign_in.php">
           <h1>Login Account</h1>
@@ -12,6 +13,15 @@
             <label for="password">Password</label>
             <input type="password" id="password" name="password" class="password-field" placeholder="password">
         </div>
+        <?php
+        if($_SESSION['account_check']==false){ ?>
+        <div class="form-control">
+            <p style="color: red;">Password or Email invalied!</p>
+            
+        </div>
+        <?php 
+        }
+        ?>
         <div class="link-control">
             <a href="../../book-store-project/pages/sign-up.php">Register Account?</a>
             <a href="">Forget Password?</a>

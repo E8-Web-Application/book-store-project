@@ -1,23 +1,26 @@
 <?php 
 session_start();
+include("../partials/connect.php");
 // Check if the user has submitted the login form
 if (isset($_POST['email']) && isset($_POST['password'])) {
     // Get the user's email and password
     $email = $_POST['email'];
     $password = $_POST['password'];
-    echo $email;
-    echo $password;
-  
     // Check if the user's credentials are valid (you would need to implement this logic yourself)
-    if ($email === 'test@example.com' && $password === '123') {
+    $sql="SELECT * FROM user where email='$email' and password='$password'";
+    $result=mysqli_query($conn,$sql);
+    $row=mysqli_fetch_assoc($result);
+    if ($email === $row['email']&& $password === $row['password']) {
       // Set the user's name in the session
-      $_SESSION['user_name'] = 'test';
-      $_SESSION['user_id']=1;
+      $_SESSION['user_name'] = $row['last_name'];
+      $_SESSION['user_id']=$row['id'];
+      $_SESSION['account_check']=true;
       // Redirect the user to the home page
       header('Location: ./account.php');
     } else {
       // The user's credentials are invalid, show an error message
-      $error_message = 'Invalid email or password';
+      $_SESSION['account_check']=false;
+      header('Location: ./sign-in.php');
     }
   }
 else{

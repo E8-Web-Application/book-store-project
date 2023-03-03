@@ -38,7 +38,7 @@
                <p class="t-body-price">$<?php echo $row['price'] ?></p>
                <p class="t-body-category"><?php echo $row['category_name'] ?></p>
                <div class="t-body-image">
-                  <img width="50" height="80" style="object-fit: cover;" src="http://localhost/book-store-project/images/<?php echo $row['image'] ?>" alt="<?php echo $row['image'] ?>" alt="">
+                  <img width="50" height="80" style="object-fit: cover;" src="../../../book-store-project/images/<?php echo $row['image'] ?>" alt="<?php echo $row['image'] ?>" alt="">
                </div>
                <div class="action">
                   <a href="./delete.php?id=<?php echo $row['id']; ?>">
