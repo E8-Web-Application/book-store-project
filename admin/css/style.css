@@ -11,9 +11,12 @@ body {
     width: 100%;
     min-height: 100vh;
     background: #f4f3f3;
-    padding: 100px;
+   padding-left: 60px;
+   padding-top:100px ;
+   padding-right: 10px;
 }
 .form-container{
+    width: 500px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -90,6 +93,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 70px;
+    color: gray;
 }
 .admin-account{
     display: flex;
@@ -102,7 +106,6 @@ body {
 .table-container{
   width: 100%;
   padding: 30px;
-  min-width: 500px;
   overflow: auto;
   display: flex;
   justify-content: center;
@@ -114,6 +117,27 @@ body {
     flex-direction: column;
     gap: 20px;
 
+}
+.mobile-table-container{
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    width: 100%;
+    max-width: 300px;
+
+}
+.mobile-table-body{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.mobile-table-body > p{
+    color: gray;
+    width: 100px;
 }
 .table-header{
     color: gray;
@@ -129,8 +153,20 @@ body {
 .table-body{
    
     background-color: white;
-
-
+}
+@media screen and (max-width:700px) {
+    .table{
+        display: none;
+    }
+    .table-container{
+        padding: 0;
+    }
+    .form-container{
+        width: 300px;
+    }
+    .mobile-table-container{
+        display: flex;
+    }
 }
 .action{
     display: flex;
@@ -153,6 +189,8 @@ body {
     border-radius:20px;
     text-decoration: none;
 }
+
+
 /* Display Page End */
 
 
@@ -166,6 +204,8 @@ body {
     justify-content: center;
 }
 .analyze-block{
+    text-decoration: none;
+    color: #282C34;
     cursor: pointer;
     width: 300px;
     height: 250px;
@@ -197,6 +237,7 @@ body {
     align-items: center;
     flex-direction: column;
 
+
  }
  .sign-in-block{
     width: 300px;
@@ -205,6 +246,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    position: relative;
+    left: -30px;
  }
  .body-dark-mode .sign-in-block{
     background-color: #282C34;
