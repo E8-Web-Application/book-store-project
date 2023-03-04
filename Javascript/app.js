@@ -1,4 +1,5 @@
 
+
 // Dark Mode Start
 const darkMode=document.getElementById("dark-mode");
 const body = document.querySelector('body');
@@ -11,6 +12,19 @@ if (isDarkModeEnabled) {
   body.classList.add('body-dark-mode');
   document.querySelector('#dark-mode i').classList.add('fa-toggle-on');
 }
+
+// // Send a page view to the server
+// function sendPageView() {
+//   var xhr = new XMLHttpRequest();
+//   xhr.open("GET", "../partials/track_vistor.php", true);
+//   xhr.send();
+// }
+
+// // Call sendPageView when the page is loaded
+// window.addEventListener("load", function() {
+//   sendPageView();
+//   this.alert("Heloo World");
+// });
 
 // Add an event listener to the dark mode toggle button
 darkMode.addEventListener("click", () => {

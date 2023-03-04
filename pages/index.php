@@ -95,5 +95,19 @@
   }
   ?>
 </div>
+<script>
+ // Send a page view to the server
+function sendPageView() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "../partials/track_vistor.php", true);
+  xhr.send();
+}
+
+// Call sendPageView when the page is loaded
+window.addEventListener("load", function() {
+  sendPageView();
+});
+
+</script>
 <!-- Book Container Blook Start -->
 <?php include("../partials/footer.php"); ?>

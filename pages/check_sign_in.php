@@ -5,7 +5,7 @@ include("../partials/connect.php");
 if (isset($_POST['email']) && isset($_POST['password'])) {
 
     // Get the user's email and password
-    $email = $_POST['email'];
+    $email =mysqli_real_escape_string($conn,$_POST['email']);
     $password = $_POST['password'];
     // $hash=password_hash($password,PASSWORD_DEFAULT);
     // echo $hash;

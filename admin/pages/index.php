@@ -1,69 +1,86 @@
 <?php include("../../../book-store-project/admin/partials/header.php") ?>
 <?php include("../../../book-store-project/admin/partials/navbar.php") ?>
 <?php include("../../../book-store-project/admin/partials/sidebar.php") ?>
-<?php include("../../../book-store-project/partials/connect.php") ?>
-     
-    
-    <div class="container">
-        <form action="./insert.php" class="form-container" method="post" enctype="multipart/form-data">
-              <div class="form-control">
-                <label for="name">Book Name</label>
-                <input type="text" name="name" id="name">
-              </div>
-              <div class="form-control">
-                <label for="publisher">Publisher</label>
-                <input type="text" name="publisher" id="publisher">
-              </div>
-              <div class="form-control">
-                <label for="author">Author</label>
-                <input type="text" name="author" id="author">
-              </div>
-              <div class="form-control">
-                <label for="first_publish">First Publish</label>
-                <input type="date" name="first_publish" id="first_publish">
-              </div>
-              <div class="form-control">
-                <label for="language">Language</label>
-                <input type="text" name="language" id="language">
-              </div>
-              <div class="form-control">
-                <label for="page">Page</label>
-                <input type="number" name="page" id="page">
-              </div>
-              <div class="form-control">
-                <label for="price">Price</label>
-                <input type="text" name="price" id="price">
-              </div>
-              <div class="form-control">
-                <label for="category">Category</label>
-                 <select name="category" id="category">
-                    <?php
-                    $sql="SELECT * FROM category"; 
-                       $result=mysqli_query($conn,$sql);
-                       if(mysqli_num_rows($result)>0){
-                        while($row=mysqli_fetch_assoc($result)){
-                       
-                      ?>
-                    <option value="<?php echo $row['id'] ?>"><?php echo $row['category_name']; ?></option>
-                    <?php 
-                    }}
-                    ?>
-                 </select>
-              </div>
-              <div class="form-control">
-                <label for="description">Description</label>
-                <textarea name="description" id="description" cols="30" rows="10"></textarea>
-              </div>
-             
-              <div class="form-control">
-                <label for="name">Image</label>
-                <input type="file" name="image" id="image">
-              </div>
-              <div class="btn-block">
-                <a class="btn btn-back" href="../../../book-store-project/pages/index.php">Back Home</a>
-                <button type="submit" class="btn btn-back">Save</button>
-              </div>
-        </form>
+<?php 
+session_start();
+
+if(isset($_SESSION['isAdmin'])){
+    if($_SESSION['isAdmin']===1){
+       header('Location: ./index.php');
+    }
+    }
+    else{
+       header('Location: ./login.php');
+    }
+include("../../../book-store-project/partials/connect.php");
+// Get Number of order
+$order_sql = "SELECT count(*) FROM orders;";
+$order_result = mysqli_query($conn, $order_sql);
+$order_row = mysqli_fetch_row($order_result);
+$number_order=$order_row[0];
+// Get Number of product
+$product_sql = "SELECT count(*) FROM product;";
+$product_result = mysqli_query($conn, $product_sql);
+$product_row = mysqli_fetch_row($product_result);
+$number_product=$product_row[0];
+//Get Number of visitors
+$visitor_sql = "SELECT count(*) FROM visitors;";
+$visitor_result = mysqli_query($conn, $visitor_sql);
+$visitor_row = mysqli_fetch_row($visitor_result);
+$number_visitor=$visitor_row[0];
+
+
+ 
+?>
+
+
+
+<div class="analyze-container">
+    <div class="analyze-block">
+        <div class="analyze-text">
+            <h2>Order Received</h2>
+        </div>
+        <div class="analyze-number">
+        <i style="font-size: 25px;" class="fa-solid fa-cart-plus"></i>  
+            <h3>
+                <?php echo $number_order ?>
+            </h3>
+        </div>
     </div>
-</body>
-</html>
+    <div class="analyze-block">
+    <div class="analyze-text">
+            <h2>New Order</h2>
+        </div>
+        <div class="analyze-number">
+        <i style="font-size: 25px;" class="fa-solid fa-cart-plus"></i>  
+            <h3>
+                141
+            </h3>
+        </div>
+    </div>
+    <div class="analyze-block">
+    <div class="analyze-text">
+            <h2>Books Number</h2>
+        </div>
+        <div class="analyze-number">
+        <i style="font-size: 25px;" class="fa-solid fa-book"></i>
+            <h3>
+            <?php echo $number_product ?>
+
+            </h3>
+        </div>
+    </div>
+    <div class="analyze-block">
+    <div class="analyze-text">
+            <h2>Visitors</h2>
+        </div>
+        <div class="analyze-number">
+        <i style="font-size: 25px;" class="fa-solid fa-users"> </i>
+            <h3>
+            <?php echo $number_visitor ?>
+                
+            </h3>
+        </div>
+    </div>
+   
+</div>

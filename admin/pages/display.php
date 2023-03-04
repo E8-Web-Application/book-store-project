@@ -1,7 +1,20 @@
 <?php include("../../../book-store-project/admin/partials/header.php") ?>
 <?php include("../../../book-store-project/admin/partials/navbar.php") ?>
 <?php include("../../../book-store-project/admin/partials/sidebar.php") ?>
-<?php include("../../../book-store-project/partials/connect.php") ?>
+<?php include("../../../book-store-project/partials/connect.php") ;
+session_start();
+
+
+if(isset($_SESSION['isAdmin'])){
+if($_SESSION['isAdmin']===1){
+   header('Location: ./display.php');
+}
+
+}
+else{
+   header('Location: ./login.php');
+}
+?>
 
 <div class="table-container">
    <div class="table">

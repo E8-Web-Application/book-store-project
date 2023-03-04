@@ -34,7 +34,7 @@ if(isset($_POST['email'])&&$_POST['password']){
    }
 }
 else{
-    echo "Nnice";
+
 }
 
 
