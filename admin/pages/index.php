@@ -36,7 +36,7 @@ $number_visitor=$visitor_row[0];
 
 
 <div class="analyze-container">
-    <div class="analyze-block">
+    <a class="analyze-block">
         <div class="analyze-text">
             <h2>Order Received</h2>
         </div>
@@ -46,8 +46,8 @@ $number_visitor=$visitor_row[0];
                 <?php echo $number_order ?>
             </h3>
         </div>
-    </div>
-    <div class="analyze-block">
+    </a>
+    <a class="analyze-block">
     <div class="analyze-text">
             <h2>New Order</h2>
         </div>
@@ -57,8 +57,8 @@ $number_visitor=$visitor_row[0];
                 141
             </h3>
         </div>
-    </div>
-    <div class="analyze-block">
+    </a>
+    <a href="./display.php" class="analyze-block">
     <div class="analyze-text">
             <h2>Books Number</h2>
         </div>
@@ -69,8 +69,8 @@ $number_visitor=$visitor_row[0];
 
             </h3>
         </div>
-    </div>
-    <div class="analyze-block">
+    </a>
+    <a class="analyze-block">
     <div class="analyze-text">
             <h2>Visitors</h2>
         </div>
@@ -81,6 +81,6 @@ $number_visitor=$visitor_row[0];
                 
             </h3>
         </div>
-    </div>
+    </a>
    
 </div>
