@@ -49,7 +49,7 @@ else{
        <a href="../../book-store-project/pages/index.php">Home</a>
      </li>
      <li>
-       <a href="../../book-store-project/pages/category.php">Category</a>
+       <a href="../../book-store-project/pages/category.php?search=popular">Category</a>
      </li>
      <li>
        <a href="../../book-store-project/pages/sign-in.php">Account <i class="fa-solid fa-user"></i></a>

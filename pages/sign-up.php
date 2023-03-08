@@ -47,4 +47,8 @@ session_start();
 </form>
   </div>
 
+<script>
+    
+</script>
+
 <?php include("../partials/footer.php"); ?>

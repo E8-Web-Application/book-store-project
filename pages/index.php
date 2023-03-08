@@ -95,6 +95,9 @@
   }
   ?>
 </div>
+
+     
+
 <script>
  // Send a page view to the server
 function sendPageView() {
@@ -111,3 +114,4 @@ window.addEventListener("load", function() {
 </script>
 <!-- Book Container Blook Start -->
 <?php include("../partials/footer.php"); ?>
+

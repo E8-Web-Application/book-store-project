@@ -36,7 +36,7 @@ $number_visitor=$visitor_row[0];
 
 
 <div class="analyze-container">
-    <a class="analyze-block">
+    <a class="analyze-block" href="./order_list.php">
         <div class="analyze-text">
             <h2>Order Received</h2>
         </div>
@@ -47,15 +47,12 @@ $number_visitor=$visitor_row[0];
             </h3>
         </div>
     </a>
-    <a class="analyze-block">
+    <a class="analyze-block" href="./new_product.php">
     <div class="analyze-text">
-            <h2>New Order</h2>
+            <h2>Add New Product</h2>
         </div>
         <div class="analyze-number">
         <i style="font-size: 25px;" class="fa-solid fa-cart-plus"></i>  
-            <h3>
-                141
-            </h3>
         </div>
     </a>
     <a href="./display.php" class="analyze-block">

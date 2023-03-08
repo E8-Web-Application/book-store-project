@@ -148,7 +148,15 @@ body {
     padding: 10px;
     gap: 20px;
     place-items: center;
+    text-align: center;
   
+}
+.table-list-body,.order-list-header{
+    display: grid;
+    grid-template-columns: 100px 100px 50px 50px 100px 100px;
+    padding: 10px;
+    gap: 20px;
+    place-items: grid;
 }
 .table-body{
    

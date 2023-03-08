@@ -39,7 +39,7 @@ $row=mysqli_fetch_assoc($result);
              </div>
              <div class="book-detail-publisher">
                 <div class="book-add-cart">
-                <a href="#">Add To Cart</a>
+                <a href="../../book-store-project/pages/insert.php?value=1&&name=<?php echo $row['name'] ?>&&price=<?php echo $row['price'] ?>&&qty=1&&id=<?php echo $row['id']; ?>">Add To Cart</a>
                 </div>
              </div>
          </div>

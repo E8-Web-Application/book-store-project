@@ -20,6 +20,11 @@
       <p>List Product</p><i class="fa-solid fa-list"></i>
     </a>
   </div>
+  <div class="icon-container">
+    <a href="../pages/order_list.php">
+      <p>List Order</p><i class="fa-solid fa-cart-shopping"></i>
+    </a>
+  </div>
 </div>
 
 
