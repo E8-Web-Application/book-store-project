@@ -207,6 +207,12 @@ h1, h2, h3{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide img{
+    max-width: 800px;
+    object-fit: contain;
   }
   .body-dark-mode .swiper-slide{
     background-color: #282C34;

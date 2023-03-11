@@ -82,22 +82,22 @@
 include("../../../book-store-project/partials/connect.php");
    if(isset($_POST['name'])){
     $id=$_GET['id'];
-    $book_name=$_POST['name'];
-    $book_description=$_POST['description'];
-    $book_publisher=$_POST['publisher'];
-    $book_author=$_POST['author'];
-    $book_first_publish=$_POST['first_publish'];
-    $book_language=$_POST['language'];
-    $book_page=$_POST['page'];
-    $book_price=$_POST['price'];
-    $book_category=$_POST['category'];
-    $book_cover=$file['name'];
+    $book_name=mysqli_real_escape_string($conn,$_POST['name']);
+    $book_description=mysqli_real_escape_string($conn,$_POST['description']);
+    $book_publisher=mysqli_real_escape_string($conn,$_POST['publisher']);
+    $book_author=mysqli_real_escape_string($conn,$_POST['author']);
+    $book_first_publish=mysqli_real_escape_string($conn,$_POST['first_publish']);
+    $book_language=mysqli_real_escape_string($conn,$_POST['language']);
+    $book_page=mysqli_real_escape_string($conn,$_POST['page']);
+    $book_price=mysqli_real_escape_string($conn,$_POST['price']);
+    $book_category=mysqli_real_escape_string($conn,$_POST['category']);
+    $book_cover=mysqli_real_escape_string($conn,$file['name']);
   $book_category=$_POST['category'];
   $sql="";
   if (isset($_FILES['image'])&&$_FILES['image']['name']!="") {
     $file = $_FILES['image'];
     $destination = '../../images/' . $file['name'];
-    $book_cover=$file['name'];
+    $book_cover=mysqli_real_escape_string($conn,$file['name']);
     move_uploaded_file($file['tmp_name'], $destination);
     global $sql;
     $sql="UPDATE product SET name='$book_name',description='$book_description',publisher='$book_publisher',author='$book_author',first_publish='$book_first_publish',language='$book_language',page='$book_page',image='$book_cover',price='$book_price',category_id='$book_category' WHERE id=$id;";
