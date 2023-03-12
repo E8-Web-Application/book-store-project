@@ -33,7 +33,8 @@ if (isset($_SESSION['isAdmin'])) {
       $search_name =mysqli_real_escape_string($conn,$_GET['search']);
       if ($_GET['search'] != '') {
          global $sql;
-         $sql = "SELECT count(*) FROM product where name='$search_name';";
+         $sql = "SELECT count(*) FROM product WHERE name LIKE '%$search_name%';";
+
       }
       $result = mysqli_query($conn, $sql);
       $row = mysqli_fetch_row($result);
@@ -50,7 +51,7 @@ if (isset($_SESSION['isAdmin'])) {
 
       if ($_GET['search'] != '') {
          global $sql;
-         $sql = "SELECT product.id as id,product.name as name,product.image as image,category.category_name as category_name,product.price as price FROM `product` INNER JOIN `category` ON product.category_id=category.id where name='$search_name'  LIMIT  $start_limit,$results_per_page;";
+         $sql = "SELECT product.id as id,product.name as name,product.image as image,category.category_name as category_name,product.price as price FROM `product` INNER JOIN `category` ON product.category_id=category.id where name LIKE '%$search_name%' LIMIT  $start_limit,$results_per_page;";
       }
 
       $result = mysqli_query($conn, $sql);

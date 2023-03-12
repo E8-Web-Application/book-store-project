@@ -16,22 +16,26 @@ $row=mysqli_fetch_assoc($result);
          </div>
          <div class="book-detail-description">
              <h1><?php echo $row['name'] ?></h1>
-             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos praesentium aut blanditiis sit sed perspiciatis asperiores suscipit placeat? Odio explicabo quia voluptatem animi nostrum adipisci. Odit reiciendis totam ipsum repellendus.</p>
+             <p><?php echo $row['description'] ?></p>
              <div class="book-detail-publisher">
                 <p>Publisher</p>
-                <p>No Name</p>
+                <p><?php echo $row['publisher'] ?></p>
+             </div>
+             <div class="book-detail-publisher">
+                <p>Author</p>
+                <p><?php echo $row['author'] ?></p>
              </div>
              <div class="book-detail-publisher">
                 <p>First Publish</p>
-                <p>12/02/2005</p>
+                <p><?php echo $row['first_publish'] ?></p>
              </div>
              <div class="book-detail-publisher">
                 <p>Language</p>
-                <p>English</p>
+                <p><?php echo $row['language'] ?></p>
              </div>
              <div class="book-detail-publisher">
                 <p>Pages</p>
-                <p>240p</p>
+                <p><?php echo $row['page'] ?>P</p>
              </div>
              <div class="book-detail-publisher">
                 <p>Price</p>

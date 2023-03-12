@@ -3,19 +3,19 @@
         <p>Connect <span class="with">With</span> Us</p>
         <div class="social-block">
             <div class="social-image">
-                <img width="40" src="../../Images/facebook.png" alt="" />
+            <i style="font-size: 35px;" class="fa-brands fa-facebook"></i>
             </div>
             <div class="social-image">
-                <img width="40" src="../../Images/instagram.png" alt="" />
+            <i style="font-size: 35px;" class="fa-brands fa-instagram"></i>
             </div>
             <div class="social-image">
-                <img width="40" src="../../Images/twitter-sign.png" alt="" />
+            <i style="font-size: 35px;" class="fa-brands fa-twitter"></i>
             </div>
             <div class="social-image">
-                <img width="40" src="../../Images/linkedin.png" alt="" />
+            <i style="font-size: 35px;" class="fa-brands fa-github"></i>
             </div>
             <div class="social-image">
-                <img width="40" src="../../Images/github-sign.png" alt="" />
+            <i style="font-size: 35px;"  class="fa-brands fa-linkedin"></i>
             </div>
         </div>
         <p>Nisset <span class="sr">S.R.S</span> © 2023 All Rights Reserved.</p>
