@@ -335,17 +335,20 @@ h1, h2, h3{
 .book-card .book-price{
     color: #ed5724;
 }
+
 .book-cover {
     width: 100%;
     height: 70%;
     overflow: hidden;
 }
-.book-add-cart a{
+.book-add-cart a,.btn{
     background-color: #ed5724;
     padding: 5px;
     text-decoration: none;
     color: white;
     border-radius: 10px;
+    border: none;
+    cursor: pointer;
 }
 .book-cover img {
     width: 100%;
@@ -367,7 +370,7 @@ h1, h2, h3{
 
 /* Sign In Block Start */
  .sign-in-container{
-    min-height: 51vh;
+    min-height: 60vh;
     width: 100%;
     padding-top: 100px;
     display: flex;
@@ -641,6 +644,8 @@ background: #282C34;
     padding: 50px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    gap: 10px;
 }
 .book-detail-card{
     max-width: 1000px;
@@ -665,7 +670,70 @@ background: #282C34;
     width: 150px;
     font-weight: bold;
 }
+.comment-container{
+    width: 100%;
+    /* background-color: red; */
+    margin-top: 100px;
+}
+.comment-field textarea{
+    background-color: white;
+    border: none;
+    padding: 10px;
+    margin: 10px 0;
+}
+.body-dark-mode .comment-field textarea{
+    background-color: #282C34;
+    color: white;
+}
+.comment-block{
+     margin-top: 50px;
+     width: 100%;
+    display: flex;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    
 
+}
+.body-dark-mode .comment-block{
+    background-color: #282C34;
+}
+.comment-block-top{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+.user-comment{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.comment-time{
+ position: absolute;
+ right: 50px;
+}
+.user-comment .user-profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+.no-comment{
+    margin-top: 50px;
+    color: #ed562486;
+}
+.user-profile .cover{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(128, 128, 128, 0.315);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
 @media screen and (max-width:600px) {
    
     .book-detail-card{

@@ -2,6 +2,7 @@
 <?php include("../partials/navbar.php") ?>
 <?php include("../partials/connect.php")?>
 <?php 
+session_start();
 $id=$_GET['id'];
 $sql="SELECT * FROM product WHERE id=$id";
 
@@ -47,6 +48,58 @@ $row=mysqli_fetch_assoc($result);
                 </div>
              </div>
          </div>
+    </div>
+    <div class="comment-container">
+      <div class="comment-field">
+         <form method="post" action="./<?php if(!isset($_SESSION['user_id'])){echo "sign-in.php";}else{ echo "comment_process.php";} ?>">
+         <div class="form-control">
+                <label for="description">Leave comments</label>
+                <textarea placeholder="Leave your comment right here!" name="comment_text" id="description" cols="30" rows="5"></textarea>
+              </div>
+              <input type="hidden" name="product_id" value="<?php echo $id; ?>">
+              <div class="btn-block">
+                <button type="submit" class="btn btn-back">Comment</button>
+              </div>
+         </form>
+      </div>
+   
+<!-- Comment Block Start -->
+<?php 
+ $sql="SELECT * FROM `product_comments` as pc INNER JOIN user as u on u.id=pc.user_id WHERE product_id='$id';";
+ $result=mysqli_query($conn,$sql);
+ 
+
+?>
+
+      <div class="comment-list">
+          <?php
+          if(mysqli_num_rows($result) <=0){       
+          ?>
+           <div class="no-comment">
+             <p>No on hit the comment right here!</p>
+           </div>
+          <?php }?>
+         <?php while($row=mysqli_fetch_assoc($result)){ ?> 
+         <div class="comment-block">
+            <div class="user-comment">
+               <div class="comment-block-top">
+                  <div class="user-profile">
+                  <div class="cover">
+                  <i class="fa-solid fa-user"></i>
+                  </div>
+                  <p class="user-name"><b><?php echo $row['first_name'] ?></b></p>
+                  </div>
+                  <p style="font-size: 15px;" class="comment-time"><?php echo $row['created_date'] ?></p>
+               </div>
+               <p><?php echo $row['comment_text'] ?></p>
+              
+            </div>
+         </div>
+          
+         <?php }?>
+      </div>
+
+      <!-- Comment Block End -->
     </div>
 </div>
 

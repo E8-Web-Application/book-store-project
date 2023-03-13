@@ -25,6 +25,16 @@
       <p>List Order</p><i class="fa-solid fa-cart-shopping"></i>
     </a>
   </div>
+  <div class="icon-container">
+    <a href="../pages/slider.php">
+      <p>List Slider</p><i class="fa-solid fa-mountain"></i>
+    </a>
+  </div>
+  <div class="icon-container">
+    <a href="../pages/order_list.php">
+      <p>List Catagory</p><i class="fa-solid fa-layer-group"></i></i>
+    </a>
+  </div>
 </div>
 
 

@@ -55,6 +55,36 @@ CREATE TABLE cart (
   FOREIGN KEY (product_id) REFERENCES product(id),
   FOREIGN KEY (order_id) REFERENCES orders(id)
 );
+
+CREATE TABLE slides (
+  slide_number INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255),
+  content TEXT,
+  image VARCHAR(255),
+  showSlide boolean
+);
+-- Create the visitors table
+CREATE TABLE visitors (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  ip_address VARCHAR(45),
+  page VARCHAR(255),
+  user_agent TEXT,
+  date DATETIME,
+);
+
+
+CREATE TABLE product_comments (
+    comment_id INT AUTO_INCREMENT,
+    product_id INT NOT NULL,
+    user_id INT NOT NULL,
+    comment_text TEXT NOT NULL,
+    created_date DATETIME NOT NULL ,
+    PRIMARY KEY (comment_id),
+    FOREIGN KEY (product_id) REFERENCES product (id),
+    FOREIGN KEY (user_id) REFERENCES user (id)
+);
+
+
 INSERT INTO `category`(`id`, `category_name`) VALUES ('1','popular');
 INSERT INTO `category`(`id`, `category_name`) VALUES ('2','motivation');
 

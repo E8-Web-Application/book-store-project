@@ -46,9 +46,9 @@ body {
 
 
 .sidebar{
-    width: 200px;
+    width: 250px;
     height: 100vh;
-    left: -150px;
+    left: -170px;
     top: 0;
     background-color: white;
     display: flex;
@@ -64,8 +64,8 @@ body {
 
 }
 .sidebar-toggle{
-    left: -0;
-    padding-left: 20px;
+    left: 0;
+    padding-left: 50px;
 }
 .icon-container a,.arrow-sidebar{
     display: flex;
@@ -79,7 +79,7 @@ body {
     
 }
 .icon-container p{
-    width: 120px;
+    width: 150px;
 }
 .admin-navbar{
     width: 100%;
@@ -283,3 +283,13 @@ body {
  
 /* Sign In Block End */
 
+
+
+/* Add Slide Block Start */
+.form-checkbox{
+    display: flex;
+    flex-direction: row !important;
+    gap: 10px;
+}
+
+/* Add Slide Block End */
