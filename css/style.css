@@ -737,9 +737,16 @@ background: #282C34;
     place-items: center;
 }
 @media screen and (max-width:600px) {
-   
+    .comment-time{
+        position: static;
+       }
     .book-detail-card{
         flex-direction: column;
+    }
+    .comment-block-top{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
     
 }
