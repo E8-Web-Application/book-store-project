@@ -76,7 +76,7 @@ $row=mysqli_fetch_assoc($result);
           if(mysqli_num_rows($result) <=0){       
           ?>
            <div class="no-comment">
-             <p>No on hit the comment right here!</p>
+             <p>No comments have been posted here yet.</p>
            </div>
           <?php }?>
          <?php while($row=mysqli_fetch_assoc($result)){ ?> 

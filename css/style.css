@@ -649,11 +649,13 @@ background: #282C34;
 }
 .book-detail-card{
     max-width: 1000px;
+    align-self: center;
     display: flex;
     gap: 50px;
     background-color: white;
     padding: 50px;
     align-items: center;
+
 }
 .body-dark-mode .book-detail-card{
     background-color: #282C34;
@@ -737,7 +739,7 @@ background: #282C34;
 @media screen and (max-width:600px) {
    
     .book-detail-card{
-        flex-direction: c;
+        flex-direction: column;
     }
     
 }
