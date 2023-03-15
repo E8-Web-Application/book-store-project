@@ -54,22 +54,5 @@ if (isset($_FILES['image'])) {
 
 ?>
 
-<script>
-  const btnClose=document.querySelector(".btn-close");
-  const alertForm=document.querySelector(".edit-profile-alert");
-  const darkScreen=document.querySelector(".dark-screen");
-  const btnEditProfile=document.querySelector(".btn-edit-profile");
-  btnEditProfile.addEventListener("click",()=>{
-   alertForm.classList.add("edit-form-fade");
-   darkScreen.classList.add("dark-screen-fade");
-  })
-
-  btnClose.addEventListener("click",()=>{
-   alertForm.classList.remove("edit-form-fade");
-   darkScreen.classList.remove("dark-screen-fade");
-  })
-
-</script>
-
 
 <?php include("../partials/footer.php"); ?>
