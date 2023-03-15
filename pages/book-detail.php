@@ -85,7 +85,11 @@ $row=mysqli_fetch_assoc($result);
                <div class="comment-block-top">
                   <div class="user-profile">
                   <div class="cover">
-                  <i class="fa-solid fa-user"></i>
+                  <?php if($row['image']!="") {?>
+                    <img src="../images/<?=$row['image']?>" alt="">
+                  <?php } else { ?>
+                     <i class="fa-solid fa-user"></i>
+                     <?php }?>
                   </div>
                   <p class="user-name"><b><?php echo $row['first_name'] ?></b></p>
                   </div>

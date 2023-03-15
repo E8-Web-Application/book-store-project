@@ -62,10 +62,7 @@
    ?>
 
          <div class="mobile-table-container">
-            <div class="mobile-table-body">
-               <p><b>Cus_ID</b></p>
-               <p><?php echo $row['user_id'] ?></p>
-            </div>
+            
             <div class="mobile-table-body">
                <p><b>Name</b></p>
                <p><?php echo $row['name'] ?></p>
@@ -78,13 +75,14 @@
                <p><b>Price</b></p>
                <p>$<?php echo $row['price']*$row['qty'] ?></p>
             </div>
+           
+            <div class="mobile-table-body">
+               <p><b>Unit Price</b></p>
+               <p>$<?php echo $row['unit_price'] ?></p>
+            </div>
             <div class="mobile-table-body">
                <p><b>Image</b></p>
                <img alt="" width="50" height="80" style="object-fit: cover;" src="../../../book-store-project/images/<?php echo $row['image'] ?>" alt="<?php echo $row['image'] ?>">
-            </div>
-            <div class="mobile-table-body">
-               <p><b>Order_ID</b></p>
-               <p><?php echo $row['order_id'] ?></p>
             </div>
          </div>
    <?php }

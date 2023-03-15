@@ -273,8 +273,97 @@ h1, h2, h3{
 .account-container{
     min-height: 55vh;
 }
+.account-profile{
+    padding-top: 50px;
+    width: 100%;
+    background-color: white;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.account-profile .cover-image{
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ed5724;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 5px #ed5724;
+}
+.cover-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profile-menu{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+#edit_profile{
+    display: none;
+}
+.btn-edit-profile{
+    font-size: 16px !important;
+}
+.btn-close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 50px;
+}
+.btn-close:hover{
+    color: white;
+    background-color: #ed5724;
+    transition: 0.5s;
+}
+.account-logout{
+    border: solid #ed5724 1px !important;
+    background-color: white !important;
+    color: #ed5724 !important;
+}
+.edit-profile-alert{
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    transform: translateX(-50%);
+    z-index:10;
+    transition: 0.5s;
+
+}
 
 
+.edit-profile-alert form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.dark-screen{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.842);
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.5s;
+}
+.dark-screen-fade{
+    opacity: 1;
+    pointer-events: all;
+}
+.edit-form-fade{
+    top: 20%;
+}
 /* Account End Block */
 
 /* Quote Block End */
@@ -785,6 +874,12 @@ background: #282C34;
     border-radius: 50%;
     display: grid;
     place-items: center;
+    overflow: hidden;
+}
+.cover img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 @media screen and (max-width:600px) {
     .comment-time{
