@@ -32,29 +32,29 @@ window.addEventListener("resize", () => {
 
 
 
-// Dark Mode Start
-const darkMode=document.getElementById("dark-mode");
-const body = document.querySelector('body');
+// // Dark Mode Start
+// const darkMode=document.getElementById("dark-mode");
+// const body = document.querySelector('body');
 
-// Check for the saved value of dark mode in localStorage
-const isDarkModeEnabled = localStorage.getItem('darkMode') === 'true';
+// // Check for the saved value of dark mode in localStorage
+// const isDarkModeEnabled = localStorage.getItem('darkMode') === 'true';
 
-// Apply the dark mode styles if the saved value is true
-if (isDarkModeEnabled) {
-  body.classList.add('body-dark-mode');
-  document.querySelector('#dark-mode i').classList.add('fa-toggle-on');
-}
+// // Apply the dark mode styles if the saved value is true
+// if (isDarkModeEnabled) {
+//   body.classList.add('body-dark-mode');
+//   document.querySelector('#dark-mode i').classList.add('fa-toggle-on');
+// }
 
 
-// Add an event listener to the dark mode toggle button
-darkMode.addEventListener("click", () => {
-  // Toggle the dark mode class on the body element
-  body.classList.toggle('body-dark-mode');
+// // Add an event listener to the dark mode toggle button
+// darkMode.addEventListener("click", () => {
+//   // Toggle the dark mode class on the body element
+//   body.classList.toggle('body-dark-mode');
 
-  // Toggle the toggle button icon
-  document.querySelector('#dark-mode i').classList.toggle('fa-toggle-on');
+//   // Toggle the toggle button icon
+//   document.querySelector('#dark-mode i').classList.toggle('fa-toggle-on');
 
-  // Save the current state of the dark mode in localStorage
-  localStorage.setItem('darkMode', body.classList.contains('body-dark-mode'));
-});
-// Dark Mode End
+//   // Save the current state of the dark mode in localStorage
+//   localStorage.setItem('darkMode', body.classList.contains('body-dark-mode'));
+// });
+// // Dark Mode End
