@@ -4,7 +4,7 @@
 <?php include("../../../book-store-project/partials/connect.php");?>
 <?php 
 $user_id=$_SESSION['user_id'];
-$sql ="SELECT image from user where id='$user_id';";
+$sql ="SELECT * from user where id='1';";
 $result=mysqli_query($conn,$sql);
 $row=mysqli_fetch_assoc($result);
 echo $row['image'];
