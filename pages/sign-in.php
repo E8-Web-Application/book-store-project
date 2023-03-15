@@ -6,12 +6,12 @@
           <h1>Login Account</h1>
         <div class="username-block form-control">
             <label for="email">Email</label>
-            <input type="text" id="email" name="email" class="email-field" placeholder="email">
+            <input type="email" id="email" name="email" class="email-field" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
         </div>
         
         <div class="username-block form-control">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" class="password-field" placeholder="password">
+            <input type="password" id="password" name="password" class="password-field" placeholder="password" pattern="[a-zA-Z0-9]+" required>
         </div>
         <?php
         if(isset($_SESSION['account_check'])){

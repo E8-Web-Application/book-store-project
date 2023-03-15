@@ -2,6 +2,18 @@
 <?php include("../../../book-store-project/admin/partials/navbar.php") ?>
 <?php include("../../../book-store-project/admin/partials/sidebar.php") ?>
  <?php 
+ session_start();
+
+
+ if(isset($_SESSION['isAdmin'])){
+     if($_SESSION['isAdmin']===1){
+        header('Location: ./new_product.php');
+     }
+   
+     }
+     else{
+        header('Location: ./login.php');
+     }
  include("../../../book-store-project/partials/connect.php");
  $id=$_GET['id'];
  $sql = "SELECT product.id as id,product.name as name,description,publisher,author,first_publish,language,product.image as image,category.category_name as category_name,product.price as price,page FROM `product` INNER JOIN `category` ON product.category_id=category.id where product.id=$id";

@@ -529,6 +529,27 @@ background: #282C34;
 /* Checkout Block End */
 
 /* Order Page Start */
+.mobile-table-container{
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    width: 100%;
+    max-width: 300px;
+
+}
+.mobile-table-body{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.mobile-table-body > p{
+    color: gray;
+    width: 100px;
+}
 .order-container{
     width: 100%;
     display: flex;
@@ -578,7 +599,7 @@ background: #282C34;
     color: #ed562457;
 }
 .order-total{
-    display: flex;
+  display: flex;
    gap: 250px;
 }
 .category-container{
@@ -632,6 +653,35 @@ background: #282C34;
 }
 .body-dark-mode .category-pagination >a{
     background-color: #282C34;
+}
+
+
+@media screen and (max-width:700px) {
+    .order-body{
+        display: none;
+    }
+  .order-form-header{
+        display: none;
+    }
+    .mobile-table-container{
+        display: flex;
+    }
+    .order-total{
+       width: 300px;
+       justify-content: center;
+       padding: 0;
+       gap: 50px;
+
+    }
+    .checkout-form{
+      width: 300px;
+    }
+    .checkout-form-card-expire{
+        width: 100px;
+    }
+    .checkout-form-card-security{
+        width: 150px;
+    }
 }
 /* Order Page End */
 

@@ -26,12 +26,23 @@
     </a>
   </div>
   <div class="icon-container">
+    <a href="../pages/new_slide.php">
+      <p>New Slider</p><img src="../../../book-store-project/images/add-slide-icon.png" width="20" alt="">
+    </a>
+  </div>
+  
+  <div class="icon-container">
     <a href="../pages/slider.php">
-      <p>List Slider</p><i class="fa-solid fa-mountain"></i>
+      <p>List Slider</p><i class="fa-solid fa-images"></i>
     </a>
   </div>
   <div class="icon-container">
-    <a href="../pages/order_list.php">
+    <a href="../pages/new_category.php">
+      <p>New Category</p><img src="../../../book-store-project/images/add-category-icon.png" width="20" alt="">
+    </a>
+  </div>
+  <div class="icon-container">
+    <a href="../pages/category.php">
       <p>List Catagory</p><i class="fa-solid fa-layer-group"></i></i>
     </a>
   </div>

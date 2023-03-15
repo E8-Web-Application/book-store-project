@@ -1,6 +1,7 @@
 <?php include("../partials/header.php"); ?>
 <?php include("../partials/navbar.php"); ?>
 <?php 
+
 ?>
   <div class="sign-in-container">
       <form class="sign-in-block" method="post" action="./login_check.php">

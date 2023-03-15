@@ -52,6 +52,46 @@
     </div>
 
     <?php }}?>
+
+
+    <!-- Mobile Responsive for display table-->
+<?php
+   $result2 = mysqli_query($conn, $sql);
+   if (mysqli_num_rows($result2) > 0) {
+      while ($row = mysqli_fetch_assoc($result2)) {
+   ?>
+
+         <div class="mobile-table-container">
+            <div class="mobile-table-body">
+               <p><b>Cus_ID</b></p>
+               <p><?php echo $row['user_id'] ?></p>
+            </div>
+            <div class="mobile-table-body">
+               <p><b>Name</b></p>
+               <p><?php echo $row['name'] ?></p>
+            </div>
+            <div class="mobile-table-body">
+               <p><b>Qty</b></p>
+               <p><?php echo $row['qty'] ?></p>
+            </div>
+            <div class="mobile-table-body">
+               <p><b>Price</b></p>
+               <p>$<?php echo $row['price']*$row['qty'] ?></p>
+            </div>
+            <div class="mobile-table-body">
+               <p><b>Image</b></p>
+               <img alt="" width="50" height="80" style="object-fit: cover;" src="../../../book-store-project/images/<?php echo $row['image'] ?>" alt="<?php echo $row['image'] ?>">
+            </div>
+            <div class="mobile-table-body">
+               <p><b>Order_ID</b></p>
+               <p><?php echo $row['order_id'] ?></p>
+            </div>
+         </div>
+   <?php }
+   } ?>
+   <!-- Mobile Responsive for display table-->
+
+
     
     </div>
     <div class="order-total">
@@ -60,6 +100,7 @@
     </div>
 
 </div>
+
 
 
 <?php 

@@ -1,19 +1,23 @@
+<?php include("../../book-store-project/partials/connect.php"); 
+
+
+?>
+
 <div class="home-banner">
   <!-- Swiper -->
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
+      <?php
+     $sql="SELECT * FROM slides WHERE showSlide=1;";
+     $result=mysqli_query($conn,$sql);
+     while($row=mysqli_fetch_assoc($result)){
+      ?>
       <div class="swiper-slide">
-        <img src="../../book-store-project/images/banner1.jpg" alt="">
+        <img src="../../book-store-project/images/<?=$row['image']?>" alt="">
       </div>
-      <div class="swiper-slide">
-        <img src="../../book-store-project/images/banner2.jpg" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="../../book-store-project/images/banner3.jpg" alt="">
-      </div>
-      <div class="swiper-slide">
-        <img src="../../book-store-project/images/banner4.jpg" alt="">
-      </div>
+      <?php 
+     }
+      ?>
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
