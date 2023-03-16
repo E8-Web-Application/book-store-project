@@ -52,7 +52,7 @@ else{
        <a href="../../book-store-project/pages/category.php?search=popular">Category</a>
      </li>
      <li>
-       <a href="../../book-store-project/pages/sign-in.php">Account <i class="fa-solid fa-user"></i></a>
+       <a href="../../book-store-project/pages/<?php if(isset($_SESSION['user_id'])){echo 'account.php';} else{echo 'sign-in.php';}  ?>">Account <i class="fa-solid fa-user"></i></a>
      </li>
      <li>
        <a href="../../book-store-project/pages/cart.php">Cart
