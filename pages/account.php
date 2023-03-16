@@ -37,18 +37,25 @@ $row=mysqli_fetch_assoc($result);
 
 <?php 
 
+$allowed_types = array('image/jpeg', 'image/png', 'image/gif');
 if (isset($_FILES['image'])) {
   $file = $_FILES['image'];
-  $destination = '../../book-store-project/images/' . $file['name'];
-  move_uploaded_file($file['tmp_name'], $destination);
-  $cover_image = $file['name'];  
-  $user_id=$_SESSION['user_id'];
-  $sql="UPDATE `user` SET `image`='$cover_image' WHERE id='$user_id';";
-  if(mysqli_query($conn,$sql)){
-    header('Location: ./account.php');
-  }
-  else{
-    echo mysqli_error($conn);
+  if (in_array($file['type'], $allowed_types)) {
+    // The file type is allowed, continue with the upload
+    $destination = '../..//book-store-project/images/' . $file['name'];
+    move_uploaded_file($file['tmp_name'], $destination);
+    $cover_image = $file['name'];  
+    $user_id=$_SESSION['user_id'];
+    $sql="UPDATE `user` SET `image`='$cover_image' WHERE id='$user_id';";
+    if(mysqli_query($conn,$sql)){
+      header('Location: ./account.php');
+    }
+    else{
+      echo mysqli_error($conn);
+    }
+  } else {
+    // The file type is not allowed, show an error message
+    echo "Error: The uploaded file type is not allowed.";
   }
 }
 
