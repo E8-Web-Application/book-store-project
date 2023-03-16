@@ -274,6 +274,7 @@ h1, h2, h3{
     min-height: 55vh;
 }
 .account-profile{
+    margin-top: 100px;
     padding-top: 50px;
     width: 100%;
     background-color: white;
@@ -283,13 +284,16 @@ h1, h2, h3{
     align-items: center;
     gap: 30px;
 }
+.body-dark-mode .account-profile{
+    background-color: #282C34;
+}
 .account-profile .cover-image{
     width: 150px;
     height: 150px;
     border: 1px solid #ed5724;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 0 5px #ed5724;
+    box-shadow: 0 0 0 3px #ed5724;
 }
 .cover-image img{
     width: 100%;
