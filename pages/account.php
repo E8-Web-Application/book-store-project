@@ -39,7 +39,7 @@ $row=mysqli_fetch_assoc($result);
 
 if (isset($_FILES['image'])) {
   $file = $_FILES['image'];
-  $destination = '../..//book-store-project/images/' . $file['name'];
+  $destination = '../../book-store-project/images/' . $file['name'];
   move_uploaded_file($file['tmp_name'], $destination);
   $cover_image = $file['name'];  
   $user_id=$_SESSION['user_id'];
