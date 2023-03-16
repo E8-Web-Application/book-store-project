@@ -13,7 +13,7 @@ $row=mysqli_fetch_assoc($result);
 <div class="account-container">
      <div class="account-profile">
        <div class="cover-image">
-        <img src="../../book-store-project/images/<?=$row['image']?>" alt="">
+        <img src="../..//book-store-project/images/<?=$row['image']?>" alt="">
        </div>
        <div class="profile-menu">
          <button class="btn btn-edit-profile">Edit Profile</button>

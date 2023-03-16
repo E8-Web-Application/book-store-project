@@ -86,7 +86,7 @@ $row=mysqli_fetch_assoc($result);
                   <div class="user-profile">
                   <div class="cover">
                   <?php if($row['image']!="") {?>
-                    <img src="../../book-store-project/images/<?=$row['image']?>" alt="">
+                    <img src="../..//book-store-project/images/<?=$row['image']?>" alt="">
                   <?php } else { ?>
                      <i class="fa-solid fa-user"></i>
                      <?php }?>
