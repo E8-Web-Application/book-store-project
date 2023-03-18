@@ -8,6 +8,7 @@ CREATE TABLE `user` (
   email VARCHAR(50),
   password VARCHAR(50),
   phone VARCHAR(50),
+  image VARCHAR(200),
   PRIMARY KEY (id)
 );
 CREATE TABLE category (

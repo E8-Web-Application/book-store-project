@@ -7,6 +7,7 @@
   <div class="category-navigation">
     <?php
     $c_name = $_GET['search'];
+    $search_name=$_GET['query'];
     $color='gray';
     
     $sql = "SELECT * FROM category";
@@ -28,6 +29,11 @@
       }
     }
     ?>
+    <form class="category-search-form" action="./category.php?search=popular" method="get">
+      <input type="hidden" placeholder="search" name="search" value="<?=$c_name?>">
+      <input type="text" placeholder="search" name="query" >
+      <button class="btn">Search</button>
+   </form>
   </div>
   <!-- Category Navigation End Block -->
 
@@ -45,6 +51,10 @@
     include("../partials/connect.php");
     $results_per_page = 10;
     $sql = "SELECT count(*) FROM product INNER JOIN category ON product.category_id=category.id WHERE category.category_name='$c_name'";
+    if($_GET['query']!=""){
+      global $sql;
+      $sql = "SELECT count(*) FROM product INNER JOIN category ON product.category_id=category.id WHERE category.category_name='$c_name' and name LIKE '%$search_name%';";
+    }
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_row($result);
     $total_results = $row[0];
@@ -56,7 +66,14 @@
     }
     $start_limit = ($page - 1) * $results_per_page;
 
-    $sql = "SELECT p.id as id,p.name as name,p.image as image,p.price as price ,p.category_id as category_id,c.category_name as category_name FROM `product` as p INNER JOIN category as c on c.id=p.category_id where category_name='$c_name' LIMIT $start_limit,$results_per_page";
+    $sql = "SELECT p.id as id,p.name as name,p.image as image,p.price as price ,p.category_id as category_id,c.category_name as category_name FROM `product` as p INNER JOIN category as c on c.id=p.category_id where category_name='$c_name' LIMIT $start_limit,
+    $results_per_page";
+
+if($_GET['query']!=""){
+  global $sql;
+  $sql = "SELECT p.id as id,p.name as name,p.image as image,p.price as price ,p.category_id as category_id,c.category_name as category_name FROM `product` as p INNER JOIN category as c on c.id=p.category_id where category_name='$c_name' and name LIKE '%$search_name%' LIMIT $start_limit,
+    $results_per_page";
+}
     $result = mysqli_query($conn, $sql);
     ?>
     <!-- Query By Category Name End Block -->
